@@ -597,68 +597,40 @@ Code yang benar:
 ```go
 package main
 
-  
-
 import "fmt"
-
-  
 
 func main() {
 
-    var nam float64
+	var nam float64
+	var nmk string
 
-    var nmk string
+	fmt.Print("Nilai akhir mata kuliah: ")
+	fmt.Scanln(&nam)
 
-  
+	if nam > 80 {
+		nmk = "A"
+	} else if nam > 72.5 && nam <= 80 {
+		nmk = "AB"
+	} else if nam > 65 && nam <= 72.5 {
+		nmk = "B"
+	} else if nam > 57.5 && nam <= 65 {
+		nmk = "BC"
+	} else if nam > 50 && nam <= 57.5 {
+		nmk = "C"
+	} else if nam > 40 && nam <= 50 {
+		nmk = "D"
+	} else if nam <= 40 {
+		nmk = "E"
+	}
 
-    fmt.Print("Nilai akhir mata kuliah: ")
-
-    fmt.Scan(&nam)
-
-  
-
-    if nam > 80 {
-
-        nmk = "A"
-
-    } else if nam > 72.5 {
-
-        nmk = "AB"
-
-    } else if nam > 65 {
-
-        nmk = "B"
-
-    } else if nam > 57.5 {
-
-        nmk = "BC"
-
-    } else if nam > 50 {
-
-        nmk = "C"
-
-    } else if nam > 40 {
-
-        nmk = "D"
-
-    } else {
-
-        nmk = "E"
-
-    }
-
-  
-
-    fmt.Println("Nilai mata kuliah:", nmk)
-
+	fmt.Println("Nilai mata kuliah:", nmk)
 }
 ```
 
 Pertanyaan A:
-Jika nilai `nam` diberikan 80.1, program akan menghasilkan keluaran "BC" sebagai nilai mata kuliah, padahal seharusnya nilainya adalah "A". Hal ini terjadi karena program menggunakan beberapa kondisi `if` yang terpisah, bukan `if-else if`. Akibatnya, meskipun kondisi pertama (`if nam > 80`) sudah mengubah nilai menjadi "A", program tetap melanjutkan pengecekan ke kondisi berikutnya. Saat mencapai `if nam > 72.5`, nilai diubah menjadi "AB", kemudian `if nam > 65` mengubahnya lagi menjadi "B", dan seterusnya hingga akhirnya kondisi `if nam > 57.5` menggantinya dengan "BC". Karena setiap kondisi diperiksa secara independen, nilai terus diperbarui sampai kondisi terakhir yang cocok, yaitu "BC". Agar program bekerja sesuai spesifikasi, seharusnya digunakan struktur `if-else if`, sehingga begitu satu kondisi terpenuhi, program tidak lagi mengecek kondisi lainnya. Dengan begitu, jika nilai `nam` adalah 80.1, program langsung memberikan nilai "A" tanpa berubah akibat kondisi berikutnya.
-
+Ketika program telah dijalankan, output yang muncul  tidak sesuai dengan kriteria. Dikarenakan terdapat beberapa kesalahan pada program yang harus diperbaik
 Pertanyaan B:
-Program ini memiliki beberapa kesalahan yang menyebabkan hasilnya tidak sesuai dengan yang diharapkan. Pertama, ada kesalahan dalam tipe data, di mana variabel `nam` dideklarasikan sebagai `float64`, tetapi program mencoba menyimpan nilai huruf seperti "A" atau "B" ke dalamnya. Seharusnya, program menggunakan variabel terpisah dengan tipe `string` untuk menyimpan huruf tersebut. Kedua, urutan pengecekan kondisi menggunakan beberapa `if` terpisah tanpa `else if`. Hal ini menyebabkan nilai `nam` terus diperiksa oleh semua kondisi yang ada, sehingga hasil akhirnya bisa berubah dan tidak sesuai dengan yang diharapkan. Solusinya, program sebaiknya menggunakan struktur `if-else if` agar hanya satu kondisi yang dipilih sesuai dengan rentang nilai yang diberikan. Ketiga, terdapat kesalahan dalam penggunaan tanda kutip miring (“”), yang bukan tanda kutip standar (`""`), sehingga bisa menyebabkan error saat kompilasi. Selain itu, penggunaan `fmt.Scanln(&nam)` kurang optimal karena dapat menyebabkan masalah dalam membaca input, terutama jika terdapat spasi. Sebaiknya, program menggunakan `fmt.Scan(&nam)` untuk memastikan input dibaca dengan benar. Agar program berjalan dengan baik, perlu dilakukan perbaikan dalam struktur kondisional, pemisahan tipe data antara angka dan huruf, serta penggunaan sintaks yang sesuai agar tidak terjadi error saat dijalankan.
+Program ini memiliki  kesalahan yang menyebabkan hasilnya tidak sesuai dengan yang diharapkan. Pertama, ada kesalahan dalam tipe data, di mana variabel `nam` dideklarasikan sebagai `float64`, tetapi program mencoba menyimpan nilai huruf seperti "A" atau "B" ke dalamnya. Seharusnya, program menggunakan variabel terpisah dengan tipe `string` untuk menyimpan huruf tersebut. Kedua, urutan pengecekan kondisi menggunakan beberapa `if` terpisah tanpa `else if`. Hal ini menyebabkan nilai `nam` terus diperiksa oleh semua kondisi yang ada, sehingga hasil akhirnya bisa berubah dan tidak sesuai dengan yang diharapkan. Solusinya, program sebaiknya menggunakan struktur `if-else if` agar hanya satu kondisi yang dipilih sesuai dengan rentang nilai yang diberikan. Ketiga, terdapat kesalahan dalam penggunaan tanda kutip miring (“”), yang bukan tanda kutip standar (`""`), sehingga bisa menyebabkan error saat kompilasi. Selain itu, penggunaan `fmt.Scanln(&nam)` kurang optimal karena dapat menyebabkan masalah dalam membaca input, terutama jika terdapat spasi. Sebaiknya, program menggunakan `fmt.Scan(&nam)` untuk memastikan input dibaca dengan benar. Agar program berjalan dengan baik, perlu dilakukan perbaikan dalam struktur kondisional, pemisahan tipe data antara angka dan huruf, serta penggunaan sintaks yang sesuai agar tidak terjadi error saat dijalankan.
 
 Pertanyaan C:
 Program ini digunakan untuk menentukan nilai huruf berdasarkan nilai akhir mata kuliah yang dimasukkan oleh pengguna. Pertama, program meminta pengguna memasukkan nilai akhir dalam bentuk angka desimal. Nilai tersebut kemudian diperiksa menggunakan beberapa kondisi. Jika nilai lebih dari 80, maka hasilnya adalah "A". Jika lebih dari 72.5, maka mendapat "AB". Untuk nilai lebih dari 65, hasilnya "B", sedangkan nilai lebih dari 57.5 akan menghasilkan "BC". Jika nilai lebih dari 50, maka akan mendapat "C", dan nilai lebih dari 40 akan mendapat "D". Jika nilai 40 atau kurang, maka hasilnya adalah "E". Setelah pemeriksaan selesai, program menampilkan nilai huruf sesuai dengan nilai yang dimasukkan pengguna.

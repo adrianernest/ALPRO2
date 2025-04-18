@@ -1,15 +1,16 @@
 Laporan Praktikum Modul 2
+
+
 REVIEW PENGENALAN PEMROGRAMAN
 
+ADRIAN ERNEST TROY RAWUNG-103112430009
+
 Dasar Teori
+
+
 Bahasa ini dirancang untuk sederhana, cepat, dan efisien, terutama dalam pengembangan sistem backend dan pemrograman konkuren. Go memiliki tipe data statis, garbage collection, serta mendukung goroutines untuk pemrosesan paralel yang ringan. Sintaksnya sederhana dan ringkas, sehingga mudah dipelajari. Selain itu, Go memiliki waktu kompilasi yang cepat, menjadikannya pilihan populer untuk pengembangan aplikasi skala besar. Tidak seperti bahasa pemrograman lain yang mendukung class dan inheritance, Go menggunakan konsep struct dan interface untuk membangun sistem berbasis objek secara lebih fleksibel. Selain itu, Go tidak memiliki exception handling seperti try-catch, melainkan menggunakan mekanisme error handling berbasis nilai yang harus ditangani secara eksplisit.
 
 Unguided
-
-Nama : Adrian Ernest Troy Rawung
-NIM : 103112430009
-Kelas: IF-05
-
 
 
 

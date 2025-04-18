@@ -1,8 +1,14 @@
-MODUL 7
+Laporan Praktikum Modul 7
 
-Nama : Adrian Ernest Troy Rawung
-Kelas : IF-12-05
-NIM : 103112430009
+STRUCT ARRAY
+
+ADRIAN ERNEST TROY RAWUNG-103112430009
+
+Dasar Teori
+
+Dalam bahasa Go, struct array adalah kombinasi antara struct dan array yang memungkinkan penyimpanan sekumpulan data dengan struktur yang sama. Struct digunakan untuk mengelompokkan berbagai jenis data dalam satu entitas, sedangkan array menyimpan banyak elemen dengan tipe yang sama dalam jumlah tetap. Dengan struct array, kita dapat membuat array yang berisi sekumpulan struct, misalnya array dari struct Mahasiswa yang menyimpan data nama, umur, dan nilai setiap mahasiswa. Hal ini memungkinkan pengelolaan data yang lebih terstruktur dan efisien, terutama dalam aplikasi yang membutuhkan penyimpanan dan manipulasi data dalam jumlah banyak, seperti sistem informasi akademik atau manajemen inventaris.
+
+Unguided
 
 Nomor 1
 ```go
@@ -89,9 +95,11 @@ func main() {
 }
 ```
 Penjelasan :
+
 Program ini menentukan apakah sebuah titik berada di dalam satu atau dua lingkaran berdasarkan koordinatnya. Program mendefinisikan tipe data `Titik` untuk menyimpan koordinat `(x, y)` dan `Lingkaran` untuk menyimpan pusat lingkaran (`Titik`) dan jari-jari (`radius`). Fungsi [dalamLingkaran](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) menghitung jarak kuadrat antara titik dan pusat lingkaran, lalu membandingkannya dengan kuadrat jari-jari untuk menentukan apakah titik berada di dalam lingkaran. Di fungsi [main](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html), program membaca data dua lingkaran dan satu titik dari input, lalu menggunakan fungsi [dalamLingkaran](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) untuk memeriksa posisi titik relatif terhadap kedua lingkaran. Hasilnya dicetak sesuai dengan kondisi: di dalam lingkaran pertama, kedua, keduanya, atau di luar keduanya.
 
 Output :
+
 ![](Output/Nomor1.png)
 
 
@@ -244,10 +252,13 @@ func main() {
 
 }
 ```
+
 Penjelasan:
+
 Program ini melakukan berbagai operasi pada array integer berdasarkan input pengguna. Pertama, pengguna diminta memasukkan jumlah elemen dan nilai-nilai array. Program menampilkan elemen dengan indeks ganjil, genap, dan kelipatan nilai tertentu ([x](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)). Selanjutnya, pengguna dapat menghapus elemen pada indeks tertentu, dan array diperbarui. Program juga menghitung rata-rata, standar deviasi, dan frekuensi kemunculan angka tertentu dalam array. Semua hasil ditampilkan untuk memberikan informasi lengkap tentang array yang dimasukkan.
 
 Output:
+
 ![](Output/Nomor2.png)
 
 Nomor 3
@@ -334,10 +345,13 @@ func main() {
 
 }
 ```
+
 Penjelasan:
+
 Program ini mencatat hasil pertandingan antara dua klub sepak bola berdasarkan skor yang dimasukkan pengguna. Pengguna diminta memasukkan nama kedua klub, lalu memasukkan skor untuk setiap pertandingan secara berulang. Jika skor klub A lebih besar, klub A dinyatakan sebagai pemenang; jika skor klub B lebih besar, klub B menjadi pemenang; dan jika skornya sama, hasilnya adalah "Draw". Proses ini berlanjut hingga pengguna memasukkan skor negatif, yang menandakan akhir input. Program kemudian menampilkan hasil setiap pertandingan dan mengakhiri dengan pesan bahwa pertandingan selesai.
 
 Output:
+
 ![](Output/Nomor3.png)
 
 Nomor 4
@@ -479,7 +493,9 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini memeriksa apakah sebuah teks merupakan palindrome, yaitu teks yang terbaca sama dari depan maupun belakang. Pengguna diminta memasukkan teks yang diakhiri dengan tanda titik (`.`). Program hanya memproses huruf, mengabaikan karakter lain, dan mengubah semua huruf menjadi huruf kecil. Teks yang dimasukkan ditampilkan, kemudian dibalik, dan hasilnya juga ditampilkan. Program menggunakan fungsi untuk memeriksa apakah teks yang telah difilter adalah palindrome, lalu mencetak hasilnya sebagai `true` atau `false`.
 
 Output:
+
 ![](Output/Nomor4.png)

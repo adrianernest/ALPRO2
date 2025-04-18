@@ -7,6 +7,8 @@ FUNGSI
 ADRIAN ERNEST TROY RAWUNG-103112430009
 
 Dasar Teori
+
+
 Dalam bahasa pemrograman Go, fungsi (function) adalah blok kode yang dapat dieksekusi secara independen untuk meningkatkan modularitas dan reusability. Fungsi dideklarasikan dengan kata kunci func, diikuti oleh nama fungsi, parameter (jika ada), tipe return (jika ada), dan blok kode {} yang berisi instruksi. Go mendukung berbagai jenis fungsi, seperti fungsi tanpa parameter dan return, fungsi dengan parameter untuk menerima input, serta fungsi dengan return value untuk mengembalikan hasil eksekusi. Selain itu, Go memungkinkan multiple return, yang dapat mengembalikan lebih dari satu nilai sekaligus, serta fungsi variadic yang dapat menerima jumlah parameter yang tidak tetap. Penggunaan fungsi dalam Go membantu membuat kode lebih terstruktur, mudah dibaca, dan lebih mudah untuk diuji atau diperbaiki, sehingga meningkatkan efisiensi pengembangan perangkat lunak.
 
 Unguided

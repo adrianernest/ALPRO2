@@ -88,6 +88,7 @@ func main() {
 ```
 
 Penjelasan :
+
 Program ini dibuat buat ngitung **permutasi** dan **kombinasi** dari angka yang dikasih pengguna. Pertama, ada fungsi `factorial(n int)`, yang tugasnya buat ngitung faktorial, yaitu hasil kali semua angka dari 1 sampai `n`. Faktorial ini penting karena bakal dipakai di perhitungan permutasi dan kombinasi.
 
 Terus, ada fungsi `perm(n, r int)`, yang dipakai buat ngitung **permutasi**. Permutasi ini intinya cara nyusun `r` benda dari `n` benda dengan urutan yang diperhitungkan. Rumusnya `P(n, r) = n! / (n-r)!`. Kalau `n` lebih kecil dari `r`, hasilnya `0`, karena nggak mungkin milih lebih banyak dari yang tersedia. Lalu, ada fungsi `comb(n, r int)`, yang gunanya buat ngitung **kombinasi**. Kombinasi ini mirip permutasi, tapi urutan nggak diperhitungkan. Rumusnya `C(n, r) = P(n, r) / r!`, yang juga bisa ditulis `C(n, r) = n! / (r!(n-r)!)`.
@@ -141,6 +142,7 @@ func main() {
 }
 ```
 Penjelasan :
+
 Program ini membaca tiga angka dari input pengguna dan kemudian menerapkan tiga fungsi matematika (`f`, `g`, dan `h`) dalam berbagai kombinasi pada masing-masing angka. Fungsi `f(x)` mengembalikan kuadrat dari `x`, fungsi `g(x)` mengurangi `2` dari `x`, dan fungsi `h(x)` menambahkan `1` ke `x`. Setelah input dibaca, program mengecek apakah proses pembacaan berhasil. Jika terjadi kesalahan saat membaca input, program akan mencetak "Input error" dan berhenti. Jika tidak ada masalah, program akan mencetak hasil dari tiga operasi berurutan: `f(g(h(a)))`, `g(h(f(b)))`, dan `h(f(g(c))))`, yang berarti fungsi `h` dijalankan terlebih dahulu pada `a`, kemudian hasilnya diberikan ke `g`, lalu hasil akhirnya dimasukkan ke `f`, dan begitu juga untuk `b` dan `c` sesuai urutannya. Program ini sederhana tetapi menunjukkan bagaimana fungsi dapat dikomposisikan untuk membentuk operasi yang lebih kompleks.
 
 Output:
@@ -216,6 +218,7 @@ func main() {
 ```
 
 Penjelasan :
+
 Program ini dibuat untuk mengecek apakah sebuah titik berada di dalam dua lingkaran atau tidak. Cara kerjanya, pertama-tama program membaca input berupa koordinat pusat dan jari-jari dua lingkaran (`cx1, cy1, r1` untuk lingkaran pertama dan `cx2, cy2, r2` untuk lingkaran kedua), serta koordinat titik yang ingin diperiksa (`x, y`).
 
 Fungsi `jarak(a, b, c, d)` digunakan untuk menghitung kuadrat jarak antara dua titik `(a, b)` dan `(c, d)`, tanpa menggunakan akar kuadrat supaya lebih efisien. Kemudian, fungsi `didalam(cx, cy, r, x, y)` akan mengecek apakah titik `(x, y)` berada dalam lingkaran yang berpusat di `(cx, cy)` dengan jari-jari `r`. Jika iya, fungsi ini mengembalikan `1`, kalau tidak `0`.

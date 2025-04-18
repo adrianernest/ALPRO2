@@ -1,8 +1,15 @@
-Modul 4
+Laporan Praktikum Modul 4
 
-Nama : Adrian Ernest Troy Rawung
-NIM : 103112430009
-Kelas: IF-05
+PROSEDUR
+
+ADRIAN ERNEST TROY RAWUNG-103112430009
+
+Dasar Teori
+
+Prosedur dapat dianggap sebagai potongan beberapa instruksi program menjadi suatu instruksi baru yang dibuat untuk mengurangi kerumitan dari kode program yang kompleks pada suatu program yang besar. Prosedur akan menghasilkan suatu akibat atau efek langsung pada program ketika dipanggil pada program utama. Kedudukannya prosedur sama seperti instruksi dasar yang sudah ada sebelumnya (assignment) dan/atau instruksi yang berasal dari paket (fmt), seperti fmt.Scan dan fmt.Print. Karena itu selalu pilih nama prosedur yang berbentuk kata kerja atau sesuatu yang merepresentasikan proses sebagai nama dari prosedur.
+
+Unguided
+
 
 Nomor 1.
 ```go

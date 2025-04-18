@@ -66,9 +66,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Kode di atas adalah program dalam Golang yang menghitung **permusasi** dan **kombinasi** dari dua pasang bilangan yang diberikan sebagai input. Fungsi `factorial(n int)` menghitung faktorial dari `n` menggunakan perulangan. Fungsi `permutation(n, r int)` menghitung permutasi dengan rumus `n! / (n-r)!`, sementara fungsi `combination(n, r int)` menghitung kombinasi dengan rumus `P(n, r) / r!`. Program membaca empat bilangan `a, b, c, d` sebagai input, lalu mencetak hasil permutasi dan kombinasi untuk `(a, c)` dan `(b, d)`. Kode ini sederhana dan efisien untuk menghitung permutasi serta kombinasi dalam skala kecil.
 
 Output:
+
 ![](Output/Nomor1.png)
 
 
@@ -162,10 +164,12 @@ func main() {
 }
 ```
 Penjelasan:
+
 Kode di atas adalah program dalam Golang yang menentukan pemenang dalam sebuah kompetisi pemrograman berdasarkan jumlah soal yang diselesaikan dan waktu yang dihabiskan. Fungsi `hitungSkor` menghitung jumlah soal yang diselesaikan dalam batas waktu 301 menit serta total waktu yang dihabiskan. Dalam fungsi `main`, program membaca nama peserta dan waktu penyelesaian untuk 8 soal. Jika peserta menyelesaikan lebih banyak soal atau menyelesaikan jumlah soal yang sama dalam waktu lebih singkat, maka mereka dianggap sebagai pemenang. Proses ini berulang hingga input "selesai" diberikan, lalu program mencetak nama pemenang, jumlah soal yang diselesaikan, dan total waktu yang digunakan.
 
 
 Output:
+
 ![](Output/Nomor2.png)
 
 
@@ -219,8 +223,10 @@ func main() {
 }
 ```
 Penjelasan:
+
 Kode di atas adalah program dalam Golang yang mencetak deret bilangan berdasarkan aturan Collatz (3n + 1). Fungsi `cetakDeret` menerima sebuah bilangan `n`, kemudian mencetak deret hingga mencapai angka 1. Jika `n` genap, maka dibagi 2; jika ganjil, maka dikalikan 3 lalu ditambah 1. Proses ini berulang hingga `n` bernilai 1. Fungsi `main` membaca input `n`, memastikan nilainya antara 2 hingga kurang dari 1.000.000, lalu memanggil `cetakDeret` untuk mencetak hasilnya.
 
 
 Output:
+
 ![](Output/Nomor3.png)

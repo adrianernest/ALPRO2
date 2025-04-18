@@ -9,7 +9,10 @@ Unguided
 Nama : Adrian Ernest Troy Rawung
 NIM : 103112430009
 Kelas: IF-05
-**Modul 2 A**
+
+
+
+
 Nomor 1
 ```go
 package main

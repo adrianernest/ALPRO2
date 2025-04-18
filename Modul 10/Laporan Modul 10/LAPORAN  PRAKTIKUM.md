@@ -1,8 +1,21 @@
-Modul 10
+Laporan Praktikum Modul 10
 
-Nama : Adrian Ernest Troy Rawung
-Kelas : IF-12-05
-NIM : 103112430009
+ PENCARIAN NILAI EKSTRIM PADA HIMPUNAN DATA
+ 
+ADRIAN ERNEST TROY RAWUNG-103112430009
+
+Dasar Teori
+
+Pencarian nilai ekstrim berarti mencari nilai minimum dan maksimum dari suatu kumpulan data. Dalam pemrograman, ini merupakan proses dasar yang umum digunakan dalam analisis data, statistik, dan pemrosesan informasi.
+
+Dalam bahasa golang, pencarian nilai ekstrim dilakukan dengan cara:
+
+Membaca dan menyimpan data ke dalam array atau slice.
+Menginisialisasi nilai awal minimum dan maksimum dari elemen pertama dalam data.
+Melakukan iterasi (looping) untuk membandingkan setiap elemen dengan nilai minimum dan maksimum saat ini.
+Memperbarui nilai minimum atau maksimum jika ditemukan nilai yang lebih kecil atau lebih besar.
+
+Unguided
 
 Nomor 1
 ```go
@@ -95,6 +108,7 @@ func main() {
 }
 ```
 Penjelasan :
+
 Program ini digunakan untuk mendata berat anak kelinci yang akan dijual ke pasar. Pertama, program meminta input jumlah anak kelinci ([N](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)) dan memvalidasi bahwa jumlah tersebut berada dalam rentang 1 hingga 1000. Jika tidak valid, program akan menampilkan pesan kesalahan dan berhenti. Selanjutnya, program meminta input berat masing-masing anak kelinci dan menyimpannya dalam array [weights](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html). Setelah itu, nilai minimum ([minWeight](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)) dan maksimum ([maxWeight](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)) diinisialisasi dengan berat anak kelinci pertama. Program kemudian menggunakan loop untuk membandingkan setiap berat dalam array, memperbarui nilai minimum dan maksimum jika ditemukan berat yang lebih kecil atau lebih besar. Terakhir, program menampilkan berat terkecil dan terbesar dalam format dua angka di belakang koma. Program ini memastikan data berat anak kelinci dapat diolah dengan efisien dan memberikan hasil yang akurat.
 
 Output:
@@ -195,6 +209,7 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini digunakan untuk menghitung total berat ikan di setiap wadah dan rata-rata berat per wadah. Pertama, program meminta input jumlah ikan ([x](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)) dan kapasitas maksimum ikan per wadah ([y](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)), lalu berat masing-masing ikan disimpan dalam array [weights](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html). Program menghitung total berat ikan di setiap wadah dengan menjumlahkan berat ikan hingga mencapai kapasitas [y](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) atau ikan terakhir, kemudian menyimpannya dalam array [containers](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html). Setelah itu, program menampilkan total berat di setiap wadah. Selanjutnya, program menghitung rata-rata berat dengan menjumlahkan semua berat dalam [containers](vscode-file://vscode-app/c:/Users/Adrian%20Ernest/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) dan membaginya dengan jumlah wadah. Akhirnya, program menampilkan rata-rata berat ikan per wadah. Program ini memastikan pengelompokan ikan ke dalam wadah dilakukan secara efisien.
 
 Ouutput:

@@ -64,9 +64,11 @@ func main() {
 ```
 
 Penjelasan :
+
 Program ini membaca tiga input dari pengguna, menampilkannya, lalu menukar urutannya sebelum mencetak hasil akhirnya. Awalnya, program meminta pengguna memasukkan tiga string satu per satu. Setelah semua input diterima, program menampilkan urutan awal dari ketiga string tersebut. Kemudian, program menukar posisi string dengan cara menggesernya ke kiri—string pertama pindah ke posisi terakhir, sementara string kedua dan ketiga masing-masing bergeser ke depan. Setelah pertukaran selesai, program mencetak urutan baru. Misalnya, jika pengguna memasukkan "A", "B", dan "C", maka urutan awalnya adalah "A B C", dan setelah ditukar menjadi "B C A".
 
 Output:
+
 ![](Output/1A.png)
 
 Nomor 2
@@ -102,9 +104,11 @@ func main() {
 }
 ```
 Penjelasan :
+
 Program ini dibuat untuk menentukan apakah suatu tahun adalah tahun kabisat atau bukan. Pertama, program meminta pengguna memasukkan tahun, lalu menyimpannya dalam variabel `year`. Setelah itu, program memeriksa apakah tahun tersebut memenuhi aturan tahun kabisat. Aturannya sederhana: jika tahun bisa dibagi habis oleh 400, maka pasti kabisat. Jika tidak, tapi bisa dibagi habis oleh 4 **dan** tidak bisa dibagi habis oleh 100, maka juga kabisat. Kalau tidak memenuhi kedua kondisi itu, berarti bukan tahun kabisat. Hasilnya akan ditampilkan sebagai **"true"** jika kabisat, dan **"false"** jika tidak.
 
 output:
+
 ![](Output/2A.png)
 
 Nomor 3
@@ -140,9 +144,11 @@ func main() {
     fmt.Printf("Luas permukaan bola: %.2f\n", luas)
 ```
 Penjelasan:
+
 Program ini meminta pengguna memasukkan jari-jari bola, lalu menghitung volume dan luas permukaan bola. Program menghitung volume bola dengan rumus (4/3)πr^3 dan luas permukaan bola dengan rumus 4πr^2. Hasil perhitungan ditampilkan dengan dua angka di belakang koma. Misalnya, jika pengguna memasukkan jari-jari 5.
 
 Output:
+
 ![](Output/3A.png)
 
 Nomor 4
@@ -182,9 +188,11 @@ func main() {
     fmt.Printf("Kelvin: %.2fK\n", kelvin)
 ```
 Penjelasan:
+
 Program ini meminta pengguna memasukkan suhu dalam derajat Celsius, lalu mengonversinya ke Fahrenheit, Reamur, dan Kelvin. Program menghitung suhu Fahrenheit dengan rumus (Celsius × 9/5) + 32, suhu Reamur dengan rumus Celsius × 4/5, dan suhu Kelvin dengan rumus Celsius + 273.15. Hasil konversi ditampilkan dengan dua angka di belakang koma. Misalnya, jika pengguna memasukkan suhu 100 derajat Celsius
 
 Output:
+
 ![](Output/4A.png)
 
 Nomor 5
@@ -224,9 +232,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini membaca lima angka dan tiga karakter dari input pengguna, lalu mengubahnya menjadi karakter ASCII untuk ditampilkan. Pertama, lima angka yang dimasukkan oleh pengguna disimpan dalam variabel `a, b, c, d, e`, sedangkan tiga karakter disimpan dalam variabel `x, y, z`. Setelah itu, program mencetak lima angka pertama dalam bentuk karakter ASCII yang sesuai dengan nilainya. Selanjutnya, program mengambil tiga karakter yang dimasukkan, menambahkan nilai **1** ke setiap karakter, lalu mencetak hasilnya. Misalnya, jika pengguna memasukkan angka **72 101 108 108 111**, maka akan dicetak sebagai **"Hello"**, karena angka-angka tersebut mewakili huruf-huruf dalam kode ASCII. Jika pengguna memasukkan karakter **x, y, z**, maka program akan mencetak **y, z, {** karena setiap karakter bertambah satu nilai dalam kode ASCII. Program ini menunjukkan bagaimana angka dapat dikonversi menjadi teks dan bagaimana karakter bisa dimanipulasi dalam bahasa Go.
 
 Output:
+
 ![](Output/5A.png)
 
 **Modul 2 B**
@@ -268,9 +278,11 @@ func main() {
     }
 ```
 Penjelasan:
+
 Program ini meminta pengguna memasukkan warna merah, kuning, hijau, dan ungu sebanyak lima kali. Program akan menampilkan "BERHASIL: true" jika pengguna berhasil memasukkan warna yang diminta, dan "BERHASIL: false" jika pengguna salah memasukkan warna. Misalnya, jika pengguna memasukkan warna merah, kuning, hijau, dan ungu sebanyak lima kali, maka program akan menampilkan "BERHASIL: true". Jika pengguna salah memasukkan warna, maka program akan menampilkan "BERHASIL: false".
 
 Output:
+
 ![](Output/6B.png)
 
 Nomor 2
@@ -331,10 +343,13 @@ func main() {
 
 }
 ```
+
 Penjelasan:
+
 Program ini dibuat untuk mencatat nama bunga yang dimasukkan oleh pengguna dan menghitung jumlahnya. Setiap kali pengguna memasukkan nama bunga, program akan menambahkannya ke dalam daftar yang dipisahkan dengan tanda `" - "`. Proses ini terus berulang hingga pengguna mengetik **"SELESAI"**, yang akan menghentikan input. Setelah itu, program menampilkan daftar bunga yang telah dimasukkan dan jumlahnya. Untuk memastikan hasilnya rapi, program menghapus tanda pemisah terakhir menggunakan `strings.TrimSuffix()`, sehingga tidak ada `" - "` yang tersisa di akhir daftar. Misalnya, jika pengguna memasukkan **"Mawar, Melati, Tulip"**, program akan mencetak **"Mawar - Melati - Tulip"** beserta jumlah bunganya. Program ini cukup sederhana, tetapi sangat berguna untuk mencatat daftar item dengan format yang bersih dan mudah dibaca.
 
 Output:
+
 ![](Output/7B.png)
 
 Nomor 3
@@ -396,9 +411,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini dirancang untuk membantu Pak Andi mengecek apakah sepeda motornya akan oleng saat membawa belanjaan di dua kantong. Setiap kali pengguna memasukkan berat belanjaan di kedua kantong, program akan menghitung selisih beratnya. Jika selisih antara kedua kantong **9 kg atau lebih**, program akan memberi tahu bahwa sepeda motor Pak Andi bisa oleng. Program terus meminta input hingga terjadi salah satu dari tiga kondisi berikut: pengguna memasukkan berat negatif, total berat belanjaan melebihi **150 kg**, atau pengguna menghentikan input. Jika salah satu dari kondisi tersebut terpenuhi, program akan berhenti dan menampilkan pesan bahwa proses telah selesai. Dengan cara ini, program memastikan bahwa beban di motor tetap seimbang dan tidak melebihi batas yang aman.
 
 Output:
+
 ![](Output/8B.png)
 
 
@@ -431,9 +448,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini menghitung nilai dari sebuah fungsi matematika berdasarkan rumus tertentu. Pengguna diminta memasukkan angka `K`, lalu program menghitung hasilnya menggunakan rumus yang sudah ditentukan. Hasil perhitungan disimpan dalam variabel `fk` dan ditampilkan dengan 10 angka di belakang koma. Misalnya, jika pengguna memasukkan `K = 3`, program akan menghitung hasilnya dan menampilkan angka sekitar `1.0051282051`. Program ini hanya berfungsi untuk menghitung dan menampilkan hasil sesuai rumus.
 
 Output:
+
 ![](Output/9B.png)
 
 
@@ -462,9 +481,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini menghitung nilai hampiran akar 2 menggunakan metode perkalian pecahan. Pengguna diminta memasukkan nilai *K, yang menentukan berapa kali perhitungan dilakukan. Program memulai dengan nilai awal **1.0, lalu dalam perulangan sebanyak **K* kali, program menghitung pembilang dan penyebut berdasarkan rumus tertentu dan mengalikannya untuk mendekati akar 2. Hasil akhirnya ditampilkan dengan 10 angka di belakang koma.
 
 Output:
+
 ![](Output/9B&.png)
 
 **Modul 2 C **
@@ -538,9 +559,11 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini menghitung biaya pengiriman parsel berdasarkan beratnya dalam gram. Pengguna diminta memasukkan berat parsel, yang kemudian diproses oleh fungsi `hitungBiaya`. Di dalam fungsi ini, berat dikonversi menjadi kilogram (`kg`) dan gram (`gr`). Biaya dasar pengiriman ditetapkan sebesar Rp 10.000. Jika berat parsel mencapai 10 kg atau lebih, maka bagian gram diabaikan (dianggap nol). Jika sisa gram lebih dari 500 gram, biaya tambahan dihitung dengan tarif Rp 15 per gram, sedangkan jika lebih dari 0 gram tetapi tidak melebihi 500 gram, tarifnya Rp 5 per gram. Setelah biaya dihitung, program menampilkan detail berat parsel dalam bentuk kilogram dan gram, serta total biaya pengiriman yang telah dihitung.
 
 Output:
+
 ![](Output/10C.png)
 
 Nomor 2
@@ -638,14 +661,17 @@ func main() {
 ```
 
 Pertanyaan A:
+
 Ketika program telah dijalankan, output yang muncul  tidak sesuai dengan kriteria. Dikarenakan terdapat beberapa kesalahan pada program yang harus diperbaik
 Pertanyaan B:
 Program ini memiliki  kesalahan yang menyebabkan hasilnya tidak sesuai dengan yang diharapkan. Pertama, ada kesalahan dalam tipe data, di mana variabel `nam` dideklarasikan sebagai `float64`, tetapi program mencoba menyimpan nilai huruf seperti "A" atau "B" ke dalamnya. Seharusnya, program menggunakan variabel terpisah dengan tipe `string` untuk menyimpan huruf tersebut. Kedua, urutan pengecekan kondisi menggunakan beberapa `if` terpisah tanpa `else if`. Hal ini menyebabkan nilai `nam` terus diperiksa oleh semua kondisi yang ada, sehingga hasil akhirnya bisa berubah dan tidak sesuai dengan yang diharapkan. Solusinya, program sebaiknya menggunakan struktur `if-else if` agar hanya satu kondisi yang dipilih sesuai dengan rentang nilai yang diberikan. Ketiga, terdapat kesalahan dalam penggunaan tanda kutip miring (“”), yang bukan tanda kutip standar (`""`), sehingga bisa menyebabkan error saat kompilasi. Selain itu, penggunaan `fmt.Scanln(&nam)` kurang optimal karena dapat menyebabkan masalah dalam membaca input, terutama jika terdapat spasi. Sebaiknya, program menggunakan `fmt.Scan(&nam)` untuk memastikan input dibaca dengan benar. Agar program berjalan dengan baik, perlu dilakukan perbaikan dalam struktur kondisional, pemisahan tipe data antara angka dan huruf, serta penggunaan sintaks yang sesuai agar tidak terjadi error saat dijalankan.
 
 Pertanyaan C:
+
 Program ini digunakan untuk menentukan nilai huruf berdasarkan nilai akhir mata kuliah yang dimasukkan oleh pengguna. Pertama, program meminta pengguna memasukkan nilai akhir dalam bentuk angka desimal. Nilai tersebut kemudian diperiksa menggunakan beberapa kondisi. Jika nilai lebih dari 80, maka hasilnya adalah "A". Jika lebih dari 72.5, maka mendapat "AB". Untuk nilai lebih dari 65, hasilnya "B", sedangkan nilai lebih dari 57.5 akan menghasilkan "BC". Jika nilai lebih dari 50, maka akan mendapat "C", dan nilai lebih dari 40 akan mendapat "D". Jika nilai 40 atau kurang, maka hasilnya adalah "E". Setelah pemeriksaan selesai, program menampilkan nilai huruf sesuai dengan nilai yang dimasukkan pengguna.
 
 Output:
+
 ![](Output/11C.png)
 
 
@@ -702,7 +728,9 @@ func main() {
 }
 ```
 Penjelasan:
+
 Program ini bertujuan untuk menentukan faktor-faktor dari sebuah bilangan serta mengecek apakah bilangan tersebut merupakan bilangan prima. Program dimulai dengan meminta pengguna memasukkan sebuah bilangan `b`. Setelah menerima input, program menampilkan semua faktor dari `b` dengan melakukan perulangan dari `1` hingga `b` dan memeriksa apakah `b` habis dibagi oleh `i`. Jika iya, `i` dicetak sebagai faktor, dan penghitung `count` ditambah satu. Setelah semua faktor ditemukan, program mengevaluasi apakah jumlah faktor yang ditemukan adalah dua. Jika `count` sama dengan `2`, berarti `b` hanya memiliki faktor `1` dan `b` itu sendiri, sehingga program mencetak `"Prima: true"`, menandakan bahwa bilangan tersebut adalah bilangan prima. Jika jumlah faktornya lebih dari dua, program mencetak `"Prima: false"`, yang berarti bilangan tersebut bukan bilangan prima.
 
 Output:
+
 ![](Output/12C.png)

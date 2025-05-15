@@ -38,6 +38,8 @@ func main() {
 
 }
 ```
+
+
 ![](Output/Nomor1G.PNG)
 ### Penjelasan
 Program ini dimulai dengan mendefinisikan sebuah array yang berisi angka-angka yang akan diurutkan. Fungsi BubbleSort kemudian dipanggil untuk mengurutkan array dari angka terkecil ke terbesar. Selama proses pengurutan, setiap kali dua elemen bertukar tempat, variabel penghitung pertukaran akan bertambah satu. Setelah seluruh elemen terurut, program mencetak hasil array yang sudah terurut beserta jumlah pertukaran yang terjadi selama proses pengurutan.

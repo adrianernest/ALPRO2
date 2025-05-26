@@ -7,73 +7,73 @@ import (
 )
 
 type Domino struct {
-	sideOne int
-	sideTwo int
-	value   int
-	isBalak bool
+	sisiSatu    int
+	sisiDua     int
+	nilai       int
+	adalahBalak bool
 }
 
-type DominoSet struct {
-	cards [28]Domino
-	count int
+type SetDomino struct {
+	kartu  [28]Domino
+	jumlah int
 }
 
-func initializeDominoSet(set *DominoSet) {
+func inisialisasiSetDomino(set *SetDomino) {
 	idx := 0
 	for a := 0; a <= 6; a++ {
 		for b := a; b <= 6; b++ {
-			card := Domino{
-				sideOne: a,
-				sideTwo: b,
-				value:   a + b,
-				isBalak: a == b,
+			kartu := Domino{
+				sisiSatu:    a,
+				sisiDua:     b,
+				nilai:       a + b,
+				adalahBalak: a == b,
 			}
-			set.cards[idx] = card
+			set.kartu[idx] = kartu
 			idx++
 		}
 	}
-	set.count = 28
+	set.jumlah = 28
 }
 
-func shuffleCards(set *DominoSet) {
+func acakKartu(set *SetDomino) {
 	rand.Seed(time.Now().UnixNano())
-	for i := set.count - 1; i > 0; i-- {
-		randomIndex := rand.Intn(i + 1)
-		set.cards[i], set.cards[randomIndex] = set.cards[randomIndex], set.cards[i]
+	for i := set.jumlah - 1; i > 0; i-- {
+		indeksAcak := rand.Intn(i + 1)
+		set.kartu[i], set.kartu[indeksAcak] = set.kartu[indeksAcak], set.kartu[i]
 	}
 }
 
-func drawCard(set *DominoSet) Domino {
-	if set.count == 0 {
+func ambilKartu(set *SetDomino) Domino {
+	if set.jumlah == 0 {
 		return Domino{-1, -1, -1, false}
 	}
-	set.count--
-	return set.cards[set.count]
+	set.jumlah--
+	return set.kartu[set.jumlah]
 }
 
-func getCardSide(card Domino, side int) int {
-	if side == 1 {
-		return card.sideOne
-	} else if side == 2 {
-		return card.sideTwo
+func dapatkanSisiKartu(kartu Domino, sisi int) int {
+	if sisi == 1 {
+		return kartu.sisiSatu
+	} else if sisi == 2 {
+		return kartu.sisiDua
 	}
 	return -1
 }
 
-func getCardValue(card Domino) int {
-	return card.value
+func dapatkanNilaiKartu(kartu Domino) int {
+	return kartu.nilai
 }
 
 func main() {
-	var dominoSet DominoSet
+	var setDomino SetDomino
 
-	initializeDominoSet(&dominoSet)
-	shuffleCards(&dominoSet)
+	inisialisasiSetDomino(&setDomino)
+	acakKartu(&setDomino)
 
-	fmt.Println("Displaying the first 5 drawn cards:")
+	fmt.Println("Menampilkan 5 kartu pertama yang diambil:")
 	for i := 0; i < 5; i++ {
-		card := drawCard(&dominoSet)
-		fmt.Printf("Card %d: (%d,%d), Value: %d, IsBalak: %v\n",
-			i+1, card.sideOne, card.sideTwo, getCardValue(card), card.isBalak)
+		kartu := ambilKartu(&setDomino)
+		fmt.Printf("Kartu %d: (%d,%d), Nilai: %d, AdalahBalak: %v\n",
+			i+1, kartu.sisiSatu, kartu.sisiDua, dapatkanNilaiKartu(kartu), kartu.adalahBalak)
 	}
 }

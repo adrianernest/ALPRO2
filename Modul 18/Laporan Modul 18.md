@@ -23,161 +23,84 @@ Mesin abstrak adalah model komputasi yang dibangun di atas mesin komputasi yang 
 ```go
 package main
 
-  
-
 import (
-
-    "fmt"
-
-    "math/rand"
-
-    "time"
-
+	"fmt"
+	"math/rand"
+	"time"
 )
 
-  
-
 type Domino struct {
-
-    sideOne int
-
-    sideTwo int
-
-    value   int
-
-    isBalak bool
-
+	sisiSatu    int
+	sisiDua     int
+	nilai       int
+	adalahBalak bool
 }
 
-  
-
-type DominoSet struct {
-
-    cards [28]Domino
-
-    count int
-
+type SetDomino struct {
+	kartu  [28]Domino
+	jumlah int
 }
 
-  
-
-func initializeDominoSet(set *DominoSet) {
-
-    idx := 0
-
-    for a := 0; a <= 6; a++ {
-
-        for b := a; b <= 6; b++ {
-
-            card := Domino{
-
-                sideOne: a,
-
-                sideTwo: b,
-
-                value:   a + b,
-
-                isBalak: a == b,
-
-            }
-
-            set.cards[idx] = card
-
-            idx++
-
-        }
-
-    }
-
-    set.count = 28
-
+func inisialisasiSetDomino(set *SetDomino) {
+	idx := 0
+	for a := 0; a <= 6; a++ {
+		for b := a; b <= 6; b++ {
+			kartu := Domino{
+				sisiSatu:    a,
+				sisiDua:     b,
+				nilai:       a + b,
+				adalahBalak: a == b,
+			}
+			set.kartu[idx] = kartu
+			idx++
+		}
+	}
+	set.jumlah = 28
 }
 
-  
-
-func shuffleCards(set *DominoSet) {
-
-    rand.Seed(time.Now().UnixNano())
-
-    for i := set.count - 1; i > 0; i-- {
-
-        randomIndex := rand.Intn(i + 1)
-
-        set.cards[i], set.cards[randomIndex] = set.cards[randomIndex], set.cards[i]
-
-    }
-
+func acakKartu(set *SetDomino) {
+	rand.Seed(time.Now().UnixNano())
+	for i := set.jumlah - 1; i > 0; i-- {
+		indeksAcak := rand.Intn(i + 1)
+		set.kartu[i], set.kartu[indeksAcak] = set.kartu[indeksAcak], set.kartu[i]
+	}
 }
 
-  
-
-func drawCard(set *DominoSet) Domino {
-
-    if set.count == 0 {
-
-        return Domino{-1, -1, -1, false}
-
-    }
-
-    set.count--
-
-    return set.cards[set.count]
-
+func ambilKartu(set *SetDomino) Domino {
+	if set.jumlah == 0 {
+		return Domino{-1, -1, -1, false}
+	}
+	set.jumlah--
+	return set.kartu[set.jumlah]
 }
 
-  
-
-func getCardSide(card Domino, side int) int {
-
-    if side == 1 {
-
-        return card.sideOne
-
-    } else if side == 2 {
-
-        return card.sideTwo
-
-    }
-
-    return -1
-
+func dapatkanSisiKartu(kartu Domino, sisi int) int {
+	if sisi == 1 {
+		return kartu.sisiSatu
+	} else if sisi == 2 {
+		return kartu.sisiDua
+	}
+	return -1
 }
 
-  
-
-func getCardValue(card Domino) int {
-
-    return card.value
-
+func dapatkanNilaiKartu(kartu Domino) int {
+	return kartu.nilai
 }
-
-  
 
 func main() {
+	var setDomino SetDomino
 
-    var dominoSet DominoSet
+	inisialisasiSetDomino(&setDomino)
+	acakKartu(&setDomino)
 
-  
-
-    initializeDominoSet(&dominoSet)
-
-    shuffleCards(&dominoSet)
-
-  
-
-    fmt.Println("Displaying the first 5 drawn cards:")
-
-    for i := 0; i < 5; i++ {
-
-        card := drawCard(&dominoSet)
-
-        fmt.Printf("Card %d: (%d,%d), Value: %d, IsBalak: %v\n",
-
-            i+1, card.sideOne, card.sideTwo, getCardValue(card), card.isBalak)
-
-    }
-
+	fmt.Println("Menampilkan 5 kartu pertama yang diambil:")
+	for i := 0; i < 5; i++ {
+		kartu := ambilKartu(&setDomino)
+		fmt.Printf("Kartu %d: (%d,%d), Nilai: %d, AdalahBalak: %v\n",
+			i+1, kartu.sisiSatu, kartu.sisiDua, dapatkanNilaiKartu(kartu), kartu.adalahBalak)
+	}
 }
+
 ```
 ![](Output/1.png)
 ### Penjelasan
@@ -192,209 +115,108 @@ Program Go ini mendemonstrasikan operasi dasar untuk mengelola satu set kartu do
 ```go
 package main
 
-  
-
 import (
-
-    "fmt"
-
-    "math/rand"
-
-    "time"
-
+	"fmt"
+	"math/rand"
+	"time"
 )
 
-  
-
-type Tile struct {
-
-    sideOne  int
-
-    sideTwo  int
-
-    value    int
-
-    isDouble bool
-
+type Ubin struct {
+	sisiSatu    int
+	sisiDua     int
+	nilai       int
+	apakahGanda bool
 }
 
-  
-
-type TileSet struct {
-
-    tiles [28]Tile
-
-    count int
-
+type SetUbin struct {
+	ubin   [28]Ubin
+	jumlah int
 }
 
-  
-
-func initializeTiles(ts *TileSet) {
-
-    idx := 0
-
-    for a := 0; a <= 6; a++ {
-
-        for b := a; b <= 6; b++ {
-
-            t := Tile{
-
-                sideOne:  a,
-
-                sideTwo:  b,
-
-                value:    a + b,
-
-                isDouble: a == b,
-
-            }
-
-            ts.tiles[idx] = t
-
-            idx++
-
-        }
-
-    }
-
-    ts.count = 28
-
+func inisialisasiUbin(su *SetUbin) {
+	idx := 0
+	for a := 0; a <= 6; a++ {
+		for b := a; b <= 6; b++ {
+			u := Ubin{
+				sisiSatu:    a,
+				sisiDua:     b,
+				nilai:       a + b,
+				apakahGanda: a == b,
+			}
+			su.ubin[idx] = u
+			idx++
+		}
+	}
+	su.jumlah = 28
 }
 
-  
-
-func shuffleTiles(ts *TileSet) {
-
-    rand.Seed(time.Now().UnixNano())
-
-    for i := ts.count - 1; i > 0; i-- {
-
-        j := rand.Intn(i + 1)
-
-        ts.tiles[i], ts.tiles[j] = ts.tiles[j], ts.tiles[i]
-
-    }
-
+func acakUbin(su *SetUbin) {
+	rand.Seed(time.Now().UnixNano())
+	for i := su.jumlah - 1; i > 0; i-- {
+		j := rand.Intn(i + 1)
+		su.ubin[i], su.ubin[j] = su.ubin[j], su.ubin[i]
+	}
 }
 
-  
-
-func drawTile(ts *TileSet) Tile {
-
-    if ts.count == 0 {
-
-        return Tile{-1, -1, -1, false}
-
-    }
-
-    ts.count--
-
-    return ts.tiles[ts.count]
-
+func ambilUbin(su *SetUbin) Ubin {
+	if su.jumlah == 0 {
+		return Ubin{-1, -1, -1, false}
+	}
+	su.jumlah--
+	return su.ubin[su.jumlah]
 }
 
-  
-
-func getTileSide(t Tile, side int) int {
-
-    if side == 1 {
-
-        return t.sideOne
-
-    } else if side == 2 {
-
-        return t.sideTwo
-
-    } else {
-
-        return -1
-
-    }
-
+func dapatkanSisiUbin(u Ubin, sisi int) int {
+	if sisi == 1 {
+		return u.sisiSatu
+	} else if sisi == 2 {
+		return u.sisiDua
+	} else {
+		return -1
+	}
 }
 
-  
-
-func getTileValue(t Tile) int {
-
-    return t.value
-
+func dapatkanNilaiUbin(u Ubin) int {
+	return u.nilai
 }
 
-  
-
-func isMatch(t1, t2 Tile) bool {
-
-    return t1.sideOne == t2.sideOne ||
-
-        t1.sideOne == t2.sideTwo ||
-
-        t1.sideTwo == t2.sideOne ||
-
-        t1.sideTwo == t2.sideTwo
-
+func cocok(u1, u2 Ubin) bool {
+	return u1.sisiSatu == u2.sisiSatu ||
+		u1.sisiSatu == u2.sisiDua ||
+		u1.sisiDua == u2.sisiSatu ||
+		u1.sisiDua == u2.sisiDua
 }
 
-  
-
-func findMatchingTile(ts *TileSet, reference Tile) Tile {
-
-    fmt.Println("\nTile drawn: ")
-
-    for ts.count > 0 {
-
-        tile := drawTile(ts)
-
-        fmt.Printf("Drawn: (%d,%d)\n", tile.sideOne, tile.sideTwo)
-
-        if isMatch(tile, reference) {
-
-            return tile
-
-        }
-
-    }
-
-    return Tile{-1, -1, -1, false}
-
+func cariUbinCocok(su *SetUbin, referensi Ubin) Ubin {
+	fmt.Println("\nUbin yang diambil: ")
+	for su.jumlah > 0 {
+		ubin := ambilUbin(su)
+		fmt.Printf("Diambil: (%d,%d)\n", ubin.sisiSatu, ubin.sisiDua)
+		if cocok(ubin, referensi) {
+			return ubin
+		}
+	}
+	return Ubin{-1, -1, -1, false}
 }
-
-  
 
 func main() {
+	var setUbin SetUbin
 
-    var tileSet TileSet
+	inisialisasiUbin(&setUbin)
+	acakUbin(&setUbin)
 
-  
+	ubinReferensi := ambilUbin(&setUbin)
+	fmt.Printf("Ubin referensi: (%d,%d)\n", ubinReferensi.sisiSatu, ubinReferensi.sisiDua)
 
-    initializeTiles(&tileSet)
+	ubinCocok := cariUbinCocok(&setUbin, ubinReferensi)
 
-    shuffleTiles(&tileSet)
-
-  
-
-    referenceTile := drawTile(&tileSet)
-
-    fmt.Printf("Reference tile: (%d,%d)\n", referenceTile.sideOne, referenceTile.sideTwo)
-
-  
-
-    matchingTile := findMatchingTile(&tileSet, referenceTile)
-
-  
-
-    if matchingTile.sideOne == -1 {
-
-        fmt.Println("No matching tile found.")
-
-    } else {
-
-        fmt.Printf("\nMatching tile: (%d,%d)\n", matchingTile.sideOne, matchingTile.sideTwo)
-
-    }
-
+	if ubinCocok.sisiSatu == -1 {
+		fmt.Println("Tidak ada ubin yang cocok.")
+	} else {
+		fmt.Printf("\nUbin yang cocok: (%d,%d)\n", ubinCocok.sisiSatu, ubinCocok.sisiDua)
+	}
 }
+
 ```
 ![](Output/2.png)
 ### Penjelasan

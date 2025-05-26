@@ -6,98 +6,98 @@ import (
 	"time"
 )
 
-type Tile struct {
-	sideOne  int
-	sideTwo  int
-	value    int
-	isDouble bool
+type Ubin struct {
+	sisiSatu    int
+	sisiDua     int
+	nilai       int
+	apakahGanda bool
 }
 
-type TileSet struct {
-	tiles [28]Tile
-	count int
+type SetUbin struct {
+	ubin   [28]Ubin
+	jumlah int
 }
 
-func initializeTiles(ts *TileSet) {
+func inisialisasiUbin(su *SetUbin) {
 	idx := 0
 	for a := 0; a <= 6; a++ {
 		for b := a; b <= 6; b++ {
-			t := Tile{
-				sideOne:  a,
-				sideTwo:  b,
-				value:    a + b,
-				isDouble: a == b,
+			u := Ubin{
+				sisiSatu:    a,
+				sisiDua:     b,
+				nilai:       a + b,
+				apakahGanda: a == b,
 			}
-			ts.tiles[idx] = t
+			su.ubin[idx] = u
 			idx++
 		}
 	}
-	ts.count = 28
+	su.jumlah = 28
 }
 
-func shuffleTiles(ts *TileSet) {
+func acakUbin(su *SetUbin) {
 	rand.Seed(time.Now().UnixNano())
-	for i := ts.count - 1; i > 0; i-- {
+	for i := su.jumlah - 1; i > 0; i-- {
 		j := rand.Intn(i + 1)
-		ts.tiles[i], ts.tiles[j] = ts.tiles[j], ts.tiles[i]
+		su.ubin[i], su.ubin[j] = su.ubin[j], su.ubin[i]
 	}
 }
 
-func drawTile(ts *TileSet) Tile {
-	if ts.count == 0 {
-		return Tile{-1, -1, -1, false}
+func ambilUbin(su *SetUbin) Ubin {
+	if su.jumlah == 0 {
+		return Ubin{-1, -1, -1, false}
 	}
-	ts.count--
-	return ts.tiles[ts.count]
+	su.jumlah--
+	return su.ubin[su.jumlah]
 }
 
-func getTileSide(t Tile, side int) int {
-	if side == 1 {
-		return t.sideOne
-	} else if side == 2 {
-		return t.sideTwo
+func dapatkanSisiUbin(u Ubin, sisi int) int {
+	if sisi == 1 {
+		return u.sisiSatu
+	} else if sisi == 2 {
+		return u.sisiDua
 	} else {
 		return -1
 	}
 }
 
-func getTileValue(t Tile) int {
-	return t.value
+func dapatkanNilaiUbin(u Ubin) int {
+	return u.nilai
 }
 
-func isMatch(t1, t2 Tile) bool {
-	return t1.sideOne == t2.sideOne ||
-		t1.sideOne == t2.sideTwo ||
-		t1.sideTwo == t2.sideOne ||
-		t1.sideTwo == t2.sideTwo
+func cocok(u1, u2 Ubin) bool {
+	return u1.sisiSatu == u2.sisiSatu ||
+		u1.sisiSatu == u2.sisiDua ||
+		u1.sisiDua == u2.sisiSatu ||
+		u1.sisiDua == u2.sisiDua
 }
 
-func findMatchingTile(ts *TileSet, reference Tile) Tile {
-	fmt.Println("\nTile drawn: ")
-	for ts.count > 0 {
-		tile := drawTile(ts)
-		fmt.Printf("Drawn: (%d,%d)\n", tile.sideOne, tile.sideTwo)
-		if isMatch(tile, reference) {
-			return tile
+func cariUbinCocok(su *SetUbin, referensi Ubin) Ubin {
+	fmt.Println("\nUbin yang diambil: ")
+	for su.jumlah > 0 {
+		ubin := ambilUbin(su)
+		fmt.Printf("Diambil: (%d,%d)\n", ubin.sisiSatu, ubin.sisiDua)
+		if cocok(ubin, referensi) {
+			return ubin
 		}
 	}
-	return Tile{-1, -1, -1, false}
+	return Ubin{-1, -1, -1, false}
 }
 
 func main() {
-	var tileSet TileSet
+	var setUbin SetUbin
 
-	initializeTiles(&tileSet)
-	shuffleTiles(&tileSet)
+	inisialisasiUbin(&setUbin)
+	acakUbin(&setUbin)
 
-	referenceTile := drawTile(&tileSet)
-	fmt.Printf("Reference tile: (%d,%d)\n", referenceTile.sideOne, referenceTile.sideTwo)
+	ubinReferensi := ambilUbin(&setUbin)
+	fmt.Printf("Ubin referensi: (%d,%d)\n", ubinReferensi.sisiSatu, ubinReferensi.sisiDua)
 
-	matchingTile := findMatchingTile(&tileSet, referenceTile)
+	ubinCocok := cariUbinCocok(&setUbin, ubinReferensi)
 
-	if matchingTile.sideOne == -1 {
-		fmt.Println("No matching tile found.")
+	if ubinCocok.sisiSatu == -1 {
+		fmt.Println("Tidak ada ubin yang cocok.")
 	} else {
-		fmt.Printf("\nMatching tile: (%d,%d)\n", matchingTile.sideOne, matchingTile.sideTwo)
+		fmt.Printf("\nUbin yang cocok: (%d,%d)\n", ubinCocok.sisiSatu, ubinCocok.sisiDua)
 	}
 }
